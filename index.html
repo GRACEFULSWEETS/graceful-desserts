@@ -2,66 +2,269 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>GRACEFUL DESSERTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GRACEFUL DESSERTS | Luxury Dessert Experience</title>
   <style>
-    body {
+    :root {
+      --bg: #050505;
+      --bg-soft: #0e0e0e;
+      --gold: #d4af37;
+      --gold-soft: #f1df9a;
+      --text: #f5f1e6;
+      --muted: #b7ab8a;
+      --line: rgba(212, 175, 55, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: serif;
-      text-align: center;
-      padding: 60px 20px;
+      padding: 0;
     }
+
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, var(--bg) 45%);
+      color: var(--text);
+      font-family: "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1, h2 {
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
     h1 {
-      font-size: 48px;
-      letter-spacing: 2px;
+      font-size: clamp(2.2rem, 7vw, 4.8rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
-    .gold {
-      color: gold;
+
+    h2 {
+      font-size: clamp(1.6rem, 4.8vw, 2.6rem);
+      color: var(--gold-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
+
     p {
-      font-size: 18px;
-      margin: 20px 0;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text);
+      max-width: 800px;
+      margin: 0 auto;
     }
+
     .jp {
-      margin-top: 40px;
-      opacity: 0.7;
+      color: var(--muted);
+      font-size: clamp(0.92rem, 1.9vw, 1.05rem);
+      margin-top: 12px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 100px 0 80px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      padding: 40px 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(212, 175, 55, 0.07), rgba(0, 0, 0, 0.25));
+      box-shadow: 0 0 0 1px rgba(255, 215, 140, 0.08) inset;
+    }
+
+    .lead {
+      margin-top: 18px;
+    }
+
+    .section-copy {
+      text-align: center;
+      display: grid;
+      gap: 8px;
+    }
+
+    .experience-grid,
+    .offer-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      padding: 24px 20px;
+      background: var(--bg-soft);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+
+    .cta {
+      text-align: center;
+      border-bottom: 0;
+      padding-bottom: 110px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 34px;
+      border: 1px solid var(--gold);
+      color: var(--bg);
+      background: linear-gradient(120deg, var(--gold-soft), var(--gold));
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .cta-jp {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 900px) {
+      .experience-grid,
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 120px;
+      }
     }
   </style>
 </head>
 <body>
+  <header class="hero" id="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Hero</p>
+      <h1>Graceful Desserts</h1>
+      <p class="lead">Ending is not the end. It is the beginning of everything.</p>
+      <p class="jp">終わりは終わりではない。すべての始まりである。</p>
+      <p class="lead">Dessert is not something you eat. It is something that completes your life.</p>
+      <p class="jp">デザートは食べるものではない。人生を完結させるものだ。</p>
+    </div>
+  </header>
 
-  <h1 class="gold">GRACEFUL DESSERTS</h1>
+  <main class="container">
+    <section id="concept">
+      <div class="section-copy">
+        <p class="eyebrow">Concept</p>
+        <h2>The Philosophy of Completion</h2>
+        <p>We design every ending as a beginning, where one final bite opens a new emotional chapter.</p>
+        <p class="jp">私たちは、最後のひと口を新たな感情の章へ導く「始まり」として設計する。</p>
+      </div>
+    </section>
 
-  <p>
-    Ending is not the end.<br>
-    It is the beginning of everything.
-  </p>
+    <section id="experience">
+      <div class="section-copy">
+        <p class="eyebrow">Experience</p>
+        <h2>An Editorial Journey in Taste</h2>
+        <p>From first aroma to lingering memory, each course is curated to feel intimate, cinematic, and unforgettable.</p>
+        <p class="jp">香りの第一印象から余韻の記憶まで、すべてのコースを親密で映画的な体験として編み上げる。</p>
+      </div>
+      <div class="experience-grid">
+        <article class="card">
+          <h3>Atmosphere</h3>
+          <p>Black-and-gold interiors that frame every dessert like art.</p>
+          <p class="jp">黒と金の空間が、すべてのデザートを芸術として引き立てる。</p>
+        </article>
+        <article class="card">
+          <h3>Craft</h3>
+          <p>Precision textures and delicate balance, plated with intention.</p>
+          <p class="jp">精密な食感と繊細な均衡を、意図をもって一皿に表現する。</p>
+        </article>
+        <article class="card">
+          <h3>Memory</h3>
+          <p>A finale that does not close your night—it transforms it.</p>
+          <p class="jp">夜を終わらせるのではなく、変容させるフィナーレ。</p>
+        </article>
+      </div>
+    </section>
 
-  <p>
-    Dessert is not something you eat.<br>
-    It is something that completes your life.
-  </p>
+    <section id="offer">
+      <div class="section-copy">
+        <p class="eyebrow">Offer</p>
+        <h2>Private Dessert Experience</h2>
+        <p>Reserve a limited, invitation-style course designed for those seeking a new form of luxury.</p>
+        <p class="jp">新しいラグジュアリーを求める人のために、招待制・限定コースを用意する。</p>
+      </div>
+      <div class="offer-grid">
+        <article class="card">
+          <h3>Signature Course</h3>
+          <p>Seasonal progression with dramatic final expression.</p>
+          <p class="jp">季節で構成される流れと、劇的な最終表現。</p>
+        </article>
+        <article class="card">
+          <h3>Table for Two</h3>
+          <p>Intimate seating for couples, anniversaries, and milestones.</p>
+          <p class="jp">記念日や節目を祝う、二人のための親密な席。</p>
+        </article>
+        <article class="card">
+          <h3>Concierge Access</h3>
+          <p>Priority communication for bespoke arrangement requests.</p>
+          <p class="jp">要望に応じた特別手配のための優先コンシェルジュ窓口。</p>
+        </article>
+      </div>
+    </section>
 
-  <p>
-    A new expression of dessert will be born into this world.
-  </p>
-
-  <div class="jp">
-    <p>
-      終わりは終わりではない。<br>
-      それは、すべての始まり。
-    </p>
-
-    <p>
-      デザートは食べるものではない。<br>
-      人生を完結させるものだ。
-    </p>
-
-    <p>
-      新しいデザートの表現が、この世界に生まれる。
-    </p>
-  </div>
-
+    <section class="cta" id="cta">
+      <p class="eyebrow">Cta</p>
+      <h2>Begin What Comes After the Ending</h2>
+      <p>Step into the moment where dessert becomes the most meaningful part of your story.</p>
+      <p class="jp">デザートがあなたの物語で最も意味ある瞬間へと変わる体験へ。</p>
+      <a class="cta-button" href="#offer">Enter the Experience</a>
+      <p class="cta-jp">体験に入る</p>
+    </section>
+  </main>
 </body>
 </html>
